@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Konditorei Goldblatt - Handgefertigte Konditorkunst seit 1950</title>
+<meta name="description" content="Entdecken Sie handgefertigte Torten, Patisserie-Kunst und Frankfurter Spezialitäten in unserer Traditions-Konditorei in Frankfurt am Main.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+tailwind.config={
+theme:{
+extend:{
+colors:{
+primary:'#C7A46A',
+secondary:'#FADADD',
+ivory: '#FFF9F4',
+brown: '#4B2E2B'
+},
+borderRadius:{
+'none':'0px',
+'sm':'4px',
+DEFAULT:'8px',
+'md':'12px',
+'lg':'16px',
+'xl':'20px',
+'2xl':'24px',
+'3xl':'32px',
+'full':'9999px',
+'button':'8px'
+}
+}
+}
+}
+</script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+background-color: #FFF9F4;
+color: #4B2E2B;
+}
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Playfair Display', serif;
+}
+.logo {
+font-family: 'Pacifico', serif;
+}
+.hero-slider {
+height: 80vh;
+min-height: 600px;
+}
+.custom-shadow {
+box-shadow: 0 10px 25px -5px rgba(75, 46, 43, 0.1);
+}
+.nav-link {
+position: relative;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+bottom: -4px;
+left: 0;
+width: 0;
+height: 2px;
+background-color: #C7A46A;
+transition: width 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+width: 100%;
+}
+.custom-checkbox {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #C7A46A;
+border-radius: 4px;
+margin-right: 8px;
+position: relative;
+cursor: pointer;
+}
+.custom-checkbox:checked {
+background-color: #C7A46A;
+}
+.custom-checkbox:checked::after {
+content: '';
+position: absolute;
+left: 6px;
+top: 2px;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.category-filter {
+position: relative;
+}
+.category-filter::after {
+content: '';
+position: absolute;
+bottom: -2px;
+left: 0;
+width: 0;
+height: 2px;
+background-color: #C7A46A;
+transition: width 0.3s ease;
+}
+.category-filter:hover::after,
+.category-filter.active::after {
+width: 100%;
+}
+input:focus, textarea:focus {
+outline: 2px solid #C7A46A;
+outline-offset: 1px;
+}
+.product-card:hover {
+transform: translateY(-5px);
+}
+.floating-action-button {
+position: fixed;
+bottom: 30px;
+right: 30px;
+z-index: 100;
+}
+.testimonial-card {
+min-width: 300px;
+scroll-snap-align: start;
+}
+@media (min-width: 768px) {
+.testimonial-card {
+min-width: 400px;
+}
+}
+.hide-scrollbar {
+-ms-overflow-style: none;
+scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+display: none;
+}
+</style>
+</head>
+<body>
+<!-- Sticky Navigation -->
+<header class="fixed top-0 left-0 right-0 bg-ivory bg-opacity-95 shadow-md z-50">
+<div class="container mx-auto px-4 py-3">
+<nav class="flex items-center justify-between">
+<a href="#" class="flex items-center">
+<img src="https://static.readdy.ai/image/52b6cc3bb7d25218b41e6976eaad9951/ebc28fca96f0411ae5b4e4127af66ce1.jpeg" alt="Goldblatt Logo" class="h-12 w-auto">
+</a>
+<!-- Mobile Menu Button -->
+<button id="mobileMenuButton" class="md:hidden w-10 h-10 flex items-center justify-center text-brown">
+<i class="ri-menu-line ri-xl"></i>
+</button>
+<!-- Desktop Navigation -->
+<div class="hidden md:flex items-center space-x-8">
+<a href="#" class="nav-link active text-brown hover:text-primary transition-colors">Startseite</a>
+<a href="#produkte" class="nav-link text-brown hover:text-primary transition-colors">Produkte</a>
+<a href="#ueber-uns" class="nav-link text-brown hover:text-primary transition-colors">Über uns</a>
+<a href="#blog" class="nav-link text-brown hover:text-primary transition-colors">Blog</a>
+<a href="#kontakt" class="nav-link text-brown hover:text-primary transition-colors">Kontakt</a>
+</div>
+<a href="#bestellen" class="hidden md:block bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Jetzt bestellen</a>
+<!-- Mobile Navigation -->
+<div id="mobileMenu" class="hidden fixed inset-0 bg-ivory z-50 pt-20">
+<div class="container mx-auto px-4 flex flex-col space-y-6 text-center">
+<a href="#" class="py-3 text-xl text-brown hover:text-primary border-b border-secondary">Startseite</a>
+<a href="#produkte" class="py-3 text-xl text-brown hover:text-primary border-b border-secondary">Produkte</a>
+<a href="#ueber-uns" class="py-3 text-xl text-brown hover:text-primary border-b border-secondary">Über uns</a>
+<a href="#blog" class="py-3 text-xl text-brown hover:text-primary border-b border-secondary">Blog</a>
+<a href="#kontakt" class="py-3 text-xl text-brown hover:text-primary border-b border-secondary">Kontakt</a>
+<a href="#bestellen" class="bg-primary text-white px-6 py-3 !rounded-button hover:bg-opacity-90 transition-all mt-4 whitespace-nowrap">Jetzt bestellen</a>
+</div>
+<button id="mobileMenuClose" class="absolute top-5 right-5 w-10 h-10 flex items-center justify-center text-brown">
+<i class="ri-close-line ri-xl"></i>
+</button>
+</div>
+</nav>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="hero-slider relative overflow-hidden pt-20" style="background-image: url('https://static.readdy.ai/image/52b6cc3bb7d25218b41e6976eaad9951/50a83e7acd8871e13ab7a66ff8fd9a9f.webp'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-brown bg-opacity-40"></div>
+<div class="container mx-auto px-4 h-full flex items-center relative z-10">
+<div class="max-w-2xl text-white">
+<h1 class="text-4xl md:text-6xl font-bold mb-6">Handgefertigte Konditorkunst seit 1950</h1>
+<p class="text-lg md:text-xl mb-8">Entdecken Sie unsere Welt aus feinen Torten, exquisiter Patisserie und Frankfurter Spezialitäten, die mit Liebe und Tradition hergestellt werden.</p>
+<div class="flex flex-wrap gap-4">
+<a href="#produkte" class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Unsere Spezialitäten</a>
+<a href="#kontakt" class="bg-white text-brown px-8 py-3 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Kontakt aufnehmen</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Floating Action Button -->
+<div class="floating-action-button">
+<div class="flex flex-col gap-3">
+<a href="https://wa.me/491234567890" class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-green-600 transition-all">
+<i class="ri-whatsapp-line ri-xl"></i>
+</a>
+<a href="tel:+491234567890" class="w-14 h-14 bg-primary rounded-full flex items-center justify-center text-white shadow-lg hover:bg-opacity-90 transition-all">
+<i class="ri-phone-line ri-xl"></i>
+</a>
+</div>
+</div>
+<!-- Unsere Spezialitäten -->
+<section id="produkte" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-brown mb-4">Unsere Spezialitäten</h2>
+<p class="text-lg max-w-2xl mx-auto text-brown opacity-80">Entdecken Sie unsere Auswahl an handgefertigten Köstlichkeiten, die mit den feinsten Zutaten und viel Liebe zum Detail hergestellt werden.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Produkt 1 -->
+<div class="bg-ivory !rounded-2xl overflow-hidden custom-shadow transition-all duration-300 product-card">
+<div class="h-64 overflow-hidden">
+<img src="https://static.readdy.ai/image/52b6cc3bb7d25218b41e6976eaad9951/50a83e7acd8871e13ab7a66ff8fd9a9f.webp" alt="Frankfurter Kranz" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-brown mb-2">Frankfurter Kranz</h3>
+<p class="text-brown opacity-80 mb-4">Unser Klassiker: Buttercreme-Torte mit Vanille-Biskuit, knusprigen Krokant und kandierten Kirschen.</p>
+<div class="flex justify-between items-center">
+<span class="text-primary font-semibold">ab 24,90 €</span>
+<a href="#bestellen" class="text-brown hover:text-primary transition-colors flex items-center">
+<span class="mr-2">Details</span>
+<i class="ri-arrow-right-line"></i>
+</a>
+</div>
+</div>
+</div>
+<!-- Produkt 2 -->
+<div class="bg-ivory !rounded-2xl overflow-hidden custom-shadow transition-all duration-300 product-card">
+<div class="h-64 overflow-hidden">
+<img src="https://static.readdy.ai/image/52b6cc3bb7d25218b41e6976eaad9951/cf82f37c95b62d832f3451bbabef95c9.webp" alt="Bethmännchen" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-brown mb-2">Bethmännchen</h3>
+<p class="text-brown opacity-80 mb-4">Traditionelles Frankfurter Marzipangebäck mit Mandeln, nach unserem Familienrezept gebacken.</p>
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<span class="text-primary font-semibold">ab 12,50 €</span>
+<button class="text-brown hover:text-primary transition-colors flex items-center product-details-btn">
+<span class="mr-2">Details</span>
+<i class="ri-arrow-down-s-line transform transition-transform"></i>
+</button>
+</div>
+<div class="product-details hidden">
+<div class="border-t pt-4">
+<div class="space-y-3 text-brown">
+<div class="flex justify-between items-center">
+<span class="font-medium">Zutaten:</span>
+<span class="opacity-80">Marzipan, Mandeln, Puderzucker</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-medium">Allergene:</span>
+<span class="opacity-80">Mandeln, Nüsse</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-medium">Haltbarkeit:</span>
+<span class="opacity-80">5-7 Tage</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-medium">Verpackungseinheit:</span>
+<span class="opacity-80">6 Stück</span>
+</div>
+<a href="#bestellen" class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-opacity-90 transition-all inline-flex items-center justify-center w-full mt-4">
+<span class="mr-2">Jetzt bestellen</span>
+<i class="ri-shopping-cart-line"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Produkt 3 -->
+<div class="bg-ivory !rounded-2xl overflow-hidden custom-shadow transition-all duration-300 product-card">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=elegant%20wedding%20cake%20with%20multiple%20tiers%2C%20white%20fondant%20with%20gold%20accents%20and%20fresh%20flowers%2C%20luxury%20wedding%20cake%20on%20a%20golden%20cake%20stand%2C%20professional%20food%20photography%20with%20soft%20lighting%2C%20pastel%20background&width=600&height=400&seq=4&orientation=landscape" alt="Hochzeitstorten" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-brown mb-2">Hochzeitstorten</h3>
+<p class="text-brown opacity-80 mb-4">Maßgeschneiderte Traumtorten für Ihren besonderen Tag, individuell gestaltet nach Ihren Wünschen.</p>
+<div class="flex justify-between items-center">
+<span class="text-primary font-semibold">auf Anfrage</span>
+<a href="#bestellen" class="text-brown hover:text-primary transition-colors flex items-center">
+<span class="mr-2">Details</span>
+<i class="ri-arrow-right-line"></i>
+</a>
+</div>
+</div>
+</div>
+<!-- Produkt 4 -->
+<div class="bg-ivory !rounded-2xl overflow-hidden custom-shadow transition-all duration-300 product-card">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=elegant%20French%20macarons%20in%20pastel%20colors%20%28pink%2C%20ivory%2C%20gold%2C%20light%20brown%29%20arranged%20on%20a%20white%20plate%2C%20luxury%20patisserie%2C%20professional%20food%20photography%20with%20soft%20lighting%2C%20pastel%20background&width=600&height=400&seq=5&orientation=landscape" alt="Macarons" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-brown mb-2">Macarons</h3>
+<p class="text-brown opacity-80 mb-4">Zarte französische Mandel-Baiser-Küchlein in verschiedenen Geschmacksrichtungen und Farben.</p>
+<div class="flex justify-between items-center">
+<span class="text-primary font-semibold">ab 2,20 € / Stück</span>
+<a href="#bestellen" class="text-brown hover:text-primary transition-colors flex items-center">
+<span class="mr-2">Details</span>
+<i class="ri-arrow-right-line"></i>
+</a>
+</div>
+</div>
+</div>
+<!-- Produkt 5 -->
+<div class="bg-ivory !rounded-2xl overflow-hidden custom-shadow transition-all duration-300 product-card">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=elegant%20chocolate%20pralines%20and%20truffles%20in%20various%20shapes%2C%20luxury%20handmade%20chocolates%20with%20gold%20dusting%2C%20arranged%20on%20a%20white%20marble%20surface%2C%20professional%20food%20photography%20with%20soft%20lighting%2C%20pastel%20background&width=600&height=400&seq=6&orientation=landscape" alt="Pralinen" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-brown mb-2">Pralinen & Trüffel</h3>
+<p class="text-brown opacity-80 mb-4">Handgefertigte Schokoladenkunstwerke mit erlesenen Füllungen für besondere Genussmomente.</p>
+<div class="flex justify-between items-center">
+<span class="text-primary font-semibold">ab 18,90 € / 100g</span>
+<a href="#bestellen" class="text-brown hover:text-primary transition-colors flex items-center">
+<span class="mr-2">Details</span>
+<i class="ri-arrow-right-line"></i>
+</a>
+</div>
+</div>
+</div>
+<!-- Produkt 6 -->
+<div class="bg-ivory !rounded-2xl overflow-hidden custom-shadow transition-all duration-300 product-card">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=elegant%20petit%20fours%20and%20mini%20pastries%20on%20a%20tiered%20serving%20stand%2C%20luxury%20bite-sized%20desserts%20with%20decorative%20details%2C%20catering%20arrangement%2C%20professional%20food%20photography%20with%20soft%20lighting%2C%20pastel%20background&width=600&height=400&seq=7&orientation=landscape" alt="Catering" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-brown mb-2">Catering & Events</h3>
+<p class="text-brown opacity-80 mb-4">Süße Köstlichkeiten für Ihre Firmenveranstaltung, Jubiläum oder private Feier.</p>
+<div class="flex justify-between items-center">
+<span class="text-primary font-semibold">auf Anfrage</span>
+<a href="#bestellen" class="text-brown hover:text-primary transition-colors flex items-center">
+<span class="mr-2">Details</span>
+<i class="ri-arrow-right-line"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<a href="#bestellen" class="inline-block bg-primary text-white px-8 py-3 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Alle Produkte entdecken</a>
+</div>
+</div>
+</section>
+<!-- Über uns -->
+<section id="ueber-uns" class="py-20 bg-ivory">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div>
+<h2 class="text-3xl md:text-4xl font-bold text-brown mb-6">Tradition trifft Handwerkskunst</h2>
+<p class="text-brown opacity-80 mb-4">Seit 1950 steht die Konditorei Goldblatt für höchste Qualität und Handwerkskunst im Herzen von Frankfurt am Main. Was als kleine Familienbäckerei begann, hat sich zu einer der renommiertesten Konditoreien der Stadt entwickelt.</p>
+<p class="text-brown opacity-80 mb-4">Unser Geheimnis? Die Verbindung von traditionellen Rezepten, die seit drei Generationen weitergegeben werden, mit modernen Techniken und einem unermüdlichen Streben nach Perfektion.</p>
+<p class="text-brown opacity-80 mb-6">Jede unserer Kreationen wird von Hand gefertigt und mit größter Sorgfalt zubereitet. Wir verwenden ausschließlich hochwertige Zutaten aus der Region und arbeiten eng mit lokalen Produzenten zusammen.</p>
+<div class="flex flex-wrap gap-6 items-center">
+<div class="flex items-center">
+<div class="w-12 h-12 bg-primary !rounded-full flex items-center justify-center text-white mr-4">
+<i class="ri-award-line ri-xl"></i>
+</div>
+<div>
+<h4 class="font-semibold text-brown">Ausgezeichnete Qualität</h4>
+<p class="text-sm text-brown opacity-80">Mehrfach prämiert</p>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-12 h-12 bg-primary !rounded-full flex items-center justify-center text-white mr-4">
+<i class="ri-heart-line ri-xl"></i>
+</div>
+<div>
+<h4 class="font-semibold text-brown">Familienbetrieb</h4>
+<p class="text-sm text-brown opacity-80">In 3. Generation</p>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="!rounded-2xl overflow-hidden h-64 md:h-80">
+<img src="https://static.readdy.ai/image/52b6cc3bb7d25218b41e6976eaad9951/5a9fb6e7d18a56494787b8910d4c6aeb.jpeg" alt="Konditormeister bei der Arbeit" class="w-full h-full object-cover object-top">
+</div>
+<div class="!rounded-2xl overflow-hidden h-64 md:h-80 mt-8">
+<img src="https://static.readdy.ai/image/52b6cc3bb7d25218b41e6976eaad9951/ec110a93b9cb7cff13ac8b308b913960.png" alt="Unsere Konditorei" class="w-full h-full object-cover object-top">
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Aktuelle Anlässe -->
+<section class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-brown mb-4">Für jeden Anlass</h2>
+<p class="text-lg max-w-2xl mx-auto text-brown opacity-80">Von traumhaften Hochzeitstorten bis zu individuellen Firmenpräsenten – wir gestalten süße Momente für jeden besonderen Anlass.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Anlass 1 -->
+<div class="bg-ivory !rounded-2xl overflow-hidden custom-shadow transition-all duration-300 product-card">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=elegant%20wedding%20reception%20with%20tiered%20wedding%20cake%20as%20centerpiece%2C%20romantic%20setting%20with%20flowers%20and%20candles%2C%20luxury%20event%2C%20professional%20event%20photography%20with%20soft%20lighting&width=600&height=400&seq=10&orientation=landscape" alt="Hochzeiten" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-brown mb-2">Hochzeiten</h3>
+<p class="text-brown opacity-80 mb-4">Wir kreieren Ihre Traumtorte und süße Köstlichkeiten für den schönsten Tag in Ihrem Leben.</p>
+<a href="#kontakt" class="text-primary hover:underline flex items-center">
+<span class="mr-2">Beratungstermin vereinbaren</span>
+<i class="ri-arrow-right-line"></i>
+</a>
+</div>
+</div>
+<!-- Anlass 2 -->
+<div class="bg-ivory !rounded-2xl overflow-hidden custom-shadow transition-all duration-300 product-card">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=elegant%20corporate%20event%20with%20branded%20desserts%20and%20pastries%2C%20business%20meeting%20with%20catering%2C%20professional%20setting%20with%20company%20logo%20on%20petit%20fours%2C%20professional%20event%20photography%20with%20soft%20lighting&width=600&height=400&seq=11&orientation=landscape" alt="Firmenevents" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-brown mb-2">Firmenevents</h3>
+<p class="text-brown opacity-80 mb-4">Beeindrucken Sie Ihre Kunden und Mitarbeiter mit individuellen Kreationen für Ihre Veranstaltung.</p>
+<a href="#kontakt" class="text-primary hover:underline flex items-center">
+<span class="mr-2">Anfrage stellen</span>
+<i class="ri-arrow-right-line"></i>
+</a>
+</div>
+</div>
+<!-- Anlass 3 -->
+<div class="bg-ivory !rounded-2xl overflow-hidden custom-shadow transition-all duration-300 product-card">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=elegant%20gift%20boxes%20with%20assorted%20chocolates%20and%20pralines%2C%20luxury%20corporate%20gifts%20with%20ribbon%20and%20branded%20packaging%2C%20professional%20product%20photography%20with%20soft%20lighting%2C%20pastel%20background&width=600&height=400&seq=12&orientation=landscape" alt="Geschenke" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-brown mb-2">Geschenkideen</h3>
+<p class="text-brown opacity-80 mb-4">Verschenken Sie Freude mit unseren handgefertigten Pralinen und Geschenkkörben für jeden Anlass.</p>
+<a href="#bestellen" class="text-primary hover:underline flex items-center">
+<span class="mr-2">Geschenkoptionen ansehen</span>
+<i class="ri-arrow-right-line"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-20 bg-ivory">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-brown mb-4">Das sagen unsere Kunden</h2>
+<p class="text-lg max-w-2xl mx-auto text-brown opacity-80">Erfahren Sie, warum unsere Kunden immer wieder zu uns zurückkehren.</p>
+</div>
+<div class="relative">
+<div id="testimonials-container" class="flex overflow-x-auto pb-8 gap-6 hide-scrollbar snap-x snap-mandatory">
+<!-- Testimonial 1 -->
+<div class="testimonial-card flex-shrink-0 bg-white !rounded-2xl p-6 custom-shadow">
+<div class="flex items-center mb-4">
+<div class="text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<p class="text-brown mb-6">"Die Hochzeitstorte von Konditorei Goldblatt war nicht nur optisch ein Traum, sondern hat auch geschmacklich alle unsere Gäste begeistert. Der Beratungsservice war hervorragend und sehr persönlich."</p>
+<div class="flex items-center">
+<div class="w-12 h-12 bg-secondary !rounded-full flex items-center justify-center mr-4">
+<span class="font-semibold text-brown">LM</span>
+</div>
+<div>
+<h4 class="font-semibold text-brown">Laura Müller</h4>
+<p class="text-sm text-brown opacity-80">Hochzeitskunde</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="testimonial-card flex-shrink-0 bg-white !rounded-2xl p-6 custom-shadow">
+<div class="flex items-center mb-4">
+<div class="text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<p class="text-brown mb-6">"Für unsere Firmenveranstaltung hat die Konditorei Goldblatt ein fantastisches Dessert-Buffet gezaubert. Die Präsentation war erstklassig und die Qualität unübertroffen. Unsere Kunden waren begeistert!"</p>
+<div class="flex items-center">
+<div class="w-12 h-12 bg-secondary !rounded-full flex items-center justify-center mr-4">
+<span class="font-semibold text-brown">MS</span>
+</div>
+<div>
+<h4 class="font-semibold text-brown">Michael Schmidt</h4>
+<p class="text-sm text-brown opacity-80">Eventmanager, TechCorp GmbH</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="testimonial-card flex-shrink-0 bg-white !rounded-2xl p-6 custom-shadow">
+<div class="flex items-center mb-4">
+<div class="text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<p class="text-brown mb-6">"Die Bethmännchen von Goldblatt sind einfach die besten in Frankfurt! Jedes Jahr zu Weihnachten bestelle ich mehrere Packungen für die ganze Familie. Ein Stück Frankfurter Tradition, das man schmecken kann."</p>
+<div class="flex items-center">
+<div class="w-12 h-12 bg-secondary !rounded-full flex items-center justify-center mr-4">
+<span class="font-semibold text-brown">HW</span>
+</div>
+<div>
+<h4 class="font-semibold text-brown">Helga Weber</h4>
+<p class="text-sm text-brown opacity-80">Stammkundin</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 4 -->
+<div class="testimonial-card flex-shrink-0 bg-white !rounded-2xl p-6 custom-shadow">
+<div class="flex items-center mb-4">
+<div class="text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-half-fill"></i>
+</div>
+</div>
+<p class="text-brown mb-6">"Die Pralinen-Geschenkbox war das perfekte Geschenk für meinen anspruchsvollen Geschäftspartner. Die Verpackung war elegant und der Geschmack außergewöhnlich. Definitiv nicht das letzte Mal, dass ich hier bestellt habe."</p>
+<div class="flex items-center">
+<div class="w-12 h-12 bg-secondary !rounded-full flex items-center justify-center mr-4">
+<span class="font-semibold text-brown">TK</span>
+</div>
+<div>
+<h4 class="font-semibold text-brown">Thomas Krause</h4>
+<p class="text-sm text-brown opacity-80">Geschäftskunde</p>
+</div>
+</div>
+</div>
+</div>
+<button id="scroll-left" class="absolute left-0 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white !rounded-full shadow-md flex items-center justify-center text-brown z-10 disabled:opacity-50 disabled:cursor-not-allowed">
+<i class="ri-arrow-left-s-line"></i>
+</button>
+<button id="scroll-right" class="absolute right-0 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white !rounded-full shadow-md flex items-center justify-center text-brown z-10 disabled:opacity-50 disabled:cursor-not-allowed">
+<i class="ri-arrow-right-s-line"></i>
+</button>
+<div class="absolute bottom-0 left-0 right-0 flex justify-center gap-2">
+<div id="testimonial-dots" class="flex gap-2"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Blog Section -->
+<section id="blog" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-brown mb-4">Unser Blog</h2>
+<p class="text-lg max-w-2xl mx-auto text-brown opacity-80">Entdecken Sie Rezepte, Tipps und Neuigkeiten aus unserer Konditorei.</p>
+</div>
+<div class="mb-10 flex justify-center">
+<div class="inline-flex bg-ivory !rounded-full p-1">
+<button class="category-filter active px-6 py-2 !rounded-full text-brown hover:bg-white transition-all whitespace-nowrap">Alle</button>
+<button class="category-filter px-6 py-2 !rounded-full text-brown hover:bg-white transition-all whitespace-nowrap">Rezepte</button>
+<button class="category-filter px-6 py-2 !rounded-full text-brown hover:bg-white transition-all whitespace-nowrap">Events</button>
+<button class="category-filter px-6 py-2 !rounded-full text-brown hover:bg-white transition-all whitespace-nowrap">Neuigkeiten</button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Featured Post -->
+<div class="lg:col-span-2 bg-ivory !rounded-2xl overflow-hidden custom-shadow">
+<div class="grid grid-cols-1 md:grid-cols-2">
+<div class="h-full">
+<img src="https://readdy.ai/api/search-image?query=hands%20making%20traditional%20German%20Christmas%20cookies%2C%20close-up%20of%20pastry%20chef%20working%20with%20dough%20and%20cookie%20cutters%2C%20baking%20process%2C%20professional%20food%20photography%20with%20soft%20lighting&width=800&height=600&seq=13&orientation=landscape" alt="Weihnachtsbäckerei" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6 md:p-8 flex flex-col">
+<span class="text-xs font-semibold text-primary bg-primary bg-opacity-10 px-3 py-1 !rounded-full inline-block mb-4 w-fit">Rezepte</span>
+<h3 class="text-2xl font-bold text-brown mb-4">Weihnachtsbäckerei: Unsere Bethmännchen zum Selbermachen</h3>
+<p class="text-brown opacity-80 mb-6 flex-grow">Entdecken Sie unser traditionelles Rezept für die berühmten Frankfurter Bethmännchen und bringen Sie ein Stück Frankfurter Weihnachtstradition in Ihr Zuhause.</p>
+<div class="flex justify-between items-center">
+<span class="text-sm text-brown opacity-70">28. Mai 2025 • 8 Min. Lesezeit</span>
+<a href="#" class="text-primary hover:underline">Weiterlesen</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Blog Post 1 -->
+<div class="bg-ivory !rounded-2xl overflow-hidden custom-shadow">
+<div class="h-48">
+<img src="https://static.readdy.ai/image/52b6cc3bb7d25218b41e6976eaad9951/3094c3a0dea2c446a61a4142c2949a27.png" alt="Tortenworkshop" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<span class="text-xs font-semibold text-primary bg-primary bg-opacity-10 px-3 py-1 !rounded-full inline-block mb-4 w-fit">Events</span>
+<h3 class="text-xl font-bold text-brown mb-3">Neue Termine für unsere beliebten Tortenworkshops</h3>
+<p class="text-brown opacity-80 mb-4">Lernen Sie von unseren Meisterkonditoren die Kunst der Tortendekoration in unseren monatlichen Workshops.</p>
+<div class="flex justify-between items-center">
+<span class="text-sm text-brown opacity-70">20. Mai 2025 • 4 Min.</span>
+<a href="#" class="text-primary hover:underline">Weiterlesen</a>
+</div>
+</div>
+</div>
+<!-- Blog Post 2 -->
+<div class="bg-ivory !rounded-2xl overflow-hidden custom-shadow">
+<div class="h-48">
+<img src="https://readdy.ai/api/search-image?query=elegant%20summer%20fruit%20tarts%20with%20fresh%20berries%20and%20mint%2C%20colorful%20summer%20desserts%20on%20white%20plates%2C%20professional%20food%20photography%20with%20soft%20lighting%2C%20pastel%20background&width=600&height=400&seq=15&orientation=landscape" alt="Sommertorten" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<span class="text-xs font-semibold text-primary bg-primary bg-opacity-10 px-3 py-1 !rounded-full inline-block mb-4 w-fit">Neuigkeiten</span>
+<h3 class="text-xl font-bold text-brown mb-3">Unsere neue Sommerkollektion ist da!</h3>
+<p class="text-brown opacity-80 mb-4">Entdecken Sie unsere frischen Sommertorten und Desserts mit saisonalen Früchten aus der Region.</p>
+<div class="flex justify-between items-center">
+<span class="text-sm text-brown opacity-70">15. Mai 2025 • 3 Min.</span>
+<a href="#" class="text-primary hover:underline">Weiterlesen</a>
+</div>
+</div>
+</div>
+<!-- Blog Post 3 -->
+<div class="bg-ivory !rounded-2xl overflow-hidden custom-shadow">
+<div class="h-48">
+<img src="https://static.readdy.ai/image/52b6cc3bb7d25218b41e6976eaad9951/b3f97f70a0396141a5cae8531ed4d923.png" alt="Schokoladenherstellung" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<span class="text-xs font-semibold text-primary bg-primary bg-opacity-10 px-3 py-1 !rounded-full inline-block mb-4 w-fit">Rezepte</span>
+<h3 class="text-xl font-bold text-brown mb-3">Die Kunst der Schokoladenherstellung</h3>
+<p class="text-brown opacity-80 mb-4">Unser Chefpatissier erklärt die Grundlagen der Schokoladenverarbeitung und teilt seine Expertentipps.</p>
+<div class="flex justify-between items-center">
+<span class="text-sm text-brown opacity-70">10. Mai 2025 • 6 Min.</span>
+<a href="#" class="text-primary hover:underline">Weiterlesen</a>
+</div>
+</div>
+</div>
+<!-- Blog Post 4 -->
+<div class="bg-ivory !rounded-2xl overflow-hidden custom-shadow">
+<div class="h-48">
+<img src="https://readdy.ai/api/search-image?query=elegant%20pastry%20chef%20receiving%20award%20trophy%2C%20bakery%20competition%20winner%2C%20professional%20baker%20in%20chef%20uniform%20at%20award%20ceremony%2C%20professional%20event%20photography%20with%20soft%20lighting&width=600&height=400&seq=17&orientation=landscape" alt="Auszeichnung" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<span class="text-xs font-semibold text-primary bg-primary bg-opacity-10 px-3 py-1 !rounded-full inline-block mb-4 w-fit">Neuigkeiten</span>
+<h3 class="text-xl font-bold text-brown mb-3">Konditorei Goldblatt erneut ausgezeichnet</h3>
+<p class="text-brown opacity-80 mb-4">Wir freuen uns, dass unsere Pralinen-Kollektion beim internationalen Chocolate Award mit Gold prämiert wurde.</p>
+<div class="flex justify-between items-center">
+<span class="text-sm text-brown opacity-70">5. Mai 2025 • 3 Min.</span>
+<a href="#" class="text-primary hover:underline">Weiterlesen</a>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<a href="#" class="inline-block bg-primary text-white px-8 py-3 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Alle Beiträge ansehen</a>
+</div>
+</div>
+</section>
+<!-- Bestellformular -->
+<section id="bestellen" class="py-20 bg-ivory">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-brown mb-4">Jetzt bestellen</h2>
+<p class="text-lg max-w-2xl mx-auto text-brown opacity-80">Füllen Sie das Formular aus und wir setzen uns umgehend mit Ihnen in Verbindung.</p>
+</div>
+<div class="max-w-4xl mx-auto bg-white !rounded-2xl p-8 custom-shadow">
+<form id="order-form">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div>
+<label for="name" class="block text-sm font-medium text-brown mb-2">Name *</label>
+<input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-200 !rounded-lg focus:border-primary" required>
+</div>
+<div>
+<label for="email" class="block text-sm font-medium text-brown mb-2">E-Mail *</label>
+<input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-200 !rounded-lg focus:border-primary" required>
+</div>
+<div>
+<label for="phone" class="block text-sm font-medium text-brown mb-2">Telefon</label>
+<input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-200 !rounded-lg focus:border-primary">
+</div>
+<div>
+<label for="product" class="block text-sm font-medium text-brown mb-2">Produkt *</label>
+<div class="relative">
+<select id="product" name="product" class="w-full px-4 py-3 border border-gray-200 !rounded-lg focus:border-primary appearance-none pr-8" required>
+<option value="" disabled selected>Bitte auswählen</option>
+<option value="torten">Torten & Kuchen</option>
+<option value="hochzeit">Hochzeitstorten</option>
+<option value="pralinen">Pralinen & Trüffel</option>
+<option value="catering">Catering & Events</option>
+<option value="geschenke">Geschenkboxen</option>
+<option value="andere">Andere</option>
+</select>
+<div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+<i class="ri-arrow-down-s-line text-brown"></i>
+</div>
+</div>
+</div>
+<div>
+<label for="date" class="block text-sm font-medium text-brown mb-2">Wunschtermin</label>
+<input type="date" id="date" name="date" class="w-full px-4 py-3 border border-gray-200 !rounded-lg focus:border-primary">
+</div>
+<div>
+<label for="quantity" class="block text-sm font-medium text-brown mb-2">Anzahl / Größe</label>
+<input type="text" id="quantity" name="quantity" class="w-full px-4 py-3 border border-gray-200 !rounded-lg focus:border-primary">
+</div>
+</div>
+<div class="mb-6">
+<label for="message" class="block text-sm font-medium text-brown mb-2">Ihre Nachricht *</label>
+<textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-200 !rounded-lg focus:border-primary" required></textarea>
+</div>
+<div class="mb-6 flex items-start">
+<input type="checkbox" id="privacy" name="privacy" class="custom-checkbox" required>
+<label for="privacy" class="text-sm text-brown ml-2">Ich habe die <a href="#" class="text-primary hover:underline">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Daten einverstanden. *</label>
+</div>
+<div class="text-center">
+<button type="submit" class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Anfrage absenden</button>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- Kontakt -->
+<section id="kontakt" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<div>
+<h2 class="text-3xl md:text-4xl font-bold text-brown mb-6">Kontakt & Anfahrt</h2>
+<p class="text-brown opacity-80 mb-8">Besuchen Sie uns in unserer Konditorei im Herzen von Frankfurt oder kontaktieren Sie uns für Ihre individuellen Wünsche.</p>
+<div class="flex items-start mb-6">
+<div class="w-12 h-12 bg-primary !rounded-full flex items-center justify-center text-white mr-4 flex-shrink-0">
+<i class="ri-map-pin-line ri-xl"></i>
+</div>
+<div>
+<h4 class="font-semibold text-brown mb-1">Adresse</h4>
+<p class="text-brown opacity-80">Konditorei Goldblatt<br>Goethestraße 25<br>60313 Frankfurt am Main</p>
+</div>
+</div>
+<div class="flex items-start mb-6">
+<div class="w-12 h-12 bg-primary !rounded-full flex items-center justify-center text-white mr-4 flex-shrink-0">
+<i class="ri-time-line ri-xl"></i>
+</div>
+<div>
+<h4 class="font-semibold text-brown mb-1">Öffnungszeiten</h4>
+<p class="text-brown opacity-80">Montag - Freitag: 7:00 - 18:00 Uhr<br>Samstag: 8:00 - 16:00 Uhr<br>Sonntag: 9:00 - 13:00 Uhr</p>
+</div>
+</div>
+<div class="flex items-start mb-6">
+<div class="w-12 h-12 bg-primary !rounded-full flex items-center justify-center text-white mr-4 flex-shrink-0">
+<i class="ri-phone-line ri-xl"></i>
+</div>
+<div>
+<h4 class="font-semibold text-brown mb-1">Telefon</h4>
+<p class="text-brown opacity-80">+49 (0) 69 123 45678</p>
+</div>
+</div>
+<div class="flex items-start mb-8">
+<div class="w-12 h-12 bg-primary !rounded-full flex items-center justify-center text-white mr-4 flex-shrink-0">
+<i class="ri-mail-line ri-xl"></i>
+</div>
+<div>
+<h4 class="font-semibold text-brown mb-1">E-Mail</h4>
+<p class="text-brown opacity-80">info@konditorei-goldblatt.de</p>
+</div>
+</div>
+<div class="flex space-x-4">
+<a href="https://facebook.com/konditoreigoldblatt" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-primary !rounded-full flex items-center justify-center text-white hover:bg-opacity-90 transition-all">
+<i class="ri-facebook-fill ri-xl"></i>
+</a>
+<a href="https://instagram.com/konditoreigoldblatt" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-primary !rounded-full flex items-center justify-center text-white hover:bg-opacity-90 transition-all">
+<i class="ri-instagram-line ri-xl"></i>
+</a>
+<a href="https://pinterest.com/konditoreigoldblatt" target="_blank" rel="noopener noreferrer" class="w-12 h-12 bg-primary !rounded-full flex items-center justify-center text-white hover:bg-opacity-90 transition-all">
+<i class="ri-pinterest-line ri-xl"></i>
+</a>
+</div>
+</div>
+<div class="!rounded-2xl overflow-hidden h-96 md:h-[500px] relative">
+<iframe
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2558.894988587373!2d8.675533776886481!3d50.11409977142766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bd0ea5c6f23af3%3A0x9f14066ad6c91da6!2sGoethestraße%2025%2C%2060313%20Frankfurt%20am%20Main%2C%20Germany!5e0!3m2!1sen!2sus!4v1701234567890!5m2!1sen!2sus"
+style="border:0;"
+allowfullscreen=""
+loading="lazy"
+referrerpolicy="no-referrer-when-downgrade"
+class="absolute inset-0 w-full h-full">
+</iframe>
+</div>
+</div>
+</div>
+</section>
+<!-- Qualität & Zutaten -->
+<section class="py-20 bg-ivory">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-brown mb-4">Qualität & Zutaten</h2>
+<p class="text-lg max-w-2xl mx-auto text-brown opacity-80">Nur die besten Zutaten und traditionelle Handwerkskunst machen unsere Konditorei zu etwas Besonderem.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="bg-white !rounded-2xl p-8 text-center custom-shadow">
+<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-6">
+<i class="ri-leaf-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-xl font-bold text-brown mb-3">Regionale Zutaten</h3>
+<p class="text-brown opacity-80">Wir beziehen unsere Zutaten von ausgewählten lokalen Produzenten aus der Region Frankfurt.</p>
+</div>
+<div class="bg-white !rounded-2xl p-8 text-center custom-shadow">
+<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-6">
+<i class="ri-hand-heart-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-xl font-bold text-brown mb-3">Handgefertigt</h3>
+<p class="text-brown opacity-80">Jedes unserer Produkte wird mit Liebe zum Detail von Hand hergestellt und dekoriert.</p>
+</div>
+<div class="bg-white !rounded-2xl p-8 text-center custom-shadow">
+<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-6">
+<i class="ri-medal-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-xl font-bold text-brown mb-3">Beste Qualität</h3>
+<p class="text-brown opacity-80">Wir verwenden nur hochwertige Zutaten und arbeiten nach höchsten Qualitätsstandards.</p>
+</div>
+<div class="bg-white !rounded-2xl p-8 text-center custom-shadow">
+<div class="w-16 h-16 bg-primary bg-opacity-10 !rounded-full flex items-center justify-center mx-auto mb-6">
+<i class="ri-recycle-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-xl font-bold text-brown mb-3">Nachhaltig</h3>
+<p class="text-brown opacity-80">Umweltbewusstsein ist uns wichtig - von der Verpackung bis zur Produktion.</p>
+</div>
+</div>
+<div class="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="relative h-80 !rounded-2xl overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=fresh%20organic%20ingredients%20for%20baking%2C%20including%20vanilla%20beans%2C%20high-quality%20chocolate%2C%20fresh%20fruits%2C%20and%20nuts%2C%20arranged%20on%20a%20rustic%20wooden%20surface%2C%20professional%20food%20photography%20with%20soft%20natural%20lighting&width=600&height=800&seq=18&orientation=portrait" alt="Frische Zutaten" class="w-full h-full object-cover">
+<div class="absolute inset-0 bg-gradient-to-t from-brown to-transparent opacity-60"></div>
+<div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+<h3 class="text-xl font-bold mb-2">Frische Zutaten</h3>
+<p class="opacity-90">Täglich frisch und sorgfältig ausgewählt</p>
+</div>
+</div>
+<div class="relative h-80 !rounded-2xl overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=artisanal%20pastry%20chef%20working%20with%20dough%2C%20hands%20kneading%20and%20shaping%20pastry%2C%20traditional%20baking%20process%2C%20professional%20bakery%20photography%20with%20soft%20lighting&width=600&height=800&seq=19&orientation=portrait" alt="Traditionelles Handwerk" class="w-full h-full object-cover">
+<div class="absolute inset-0 bg-gradient-to-t from-brown to-transparent opacity-60"></div>
+<div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+<h3 class="text-xl font-bold mb-2">Traditionelles Handwerk</h3>
+<p class="opacity-90">Bewährte Techniken seit 1950</p>
+</div>
+</div>
+<div class="relative h-80 !rounded-2xl overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=elegant%20pastry%20decoration%20process%2C%20close-up%20of%20hands%20carefully%20decorating%20a%20cake%20with%20gold%20leaf%20and%20fresh%20flowers%2C%20luxury%20pastry%20making%2C%20professional%20food%20photography%20with%20soft%20lighting&width=600&height=800&seq=20&orientation=portrait" alt="Feine Details" class="w-full h-full object-cover">
+<div class="absolute inset-0 bg-gradient-to-t from-brown to-transparent opacity-60"></div>
+<div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+<h3 class="text-xl font-bold mb-2">Feine Details</h3>
+<p class="opacity-90">Perfektion bis ins kleinste Detail</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter -->
+<section class="py-16 bg-primary bg-opacity-10">
+<div class="container mx-auto px-4">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="text-3xl font-bold text-brown mb-4">Newsletter abonnieren</h2>
+<p class="text-brown opacity-80 mb-8">Erhalten Sie regelmäßig Neuigkeiten, saisonale Angebote und exklusive Rezepte direkt in Ihr Postfach.</p>
+<form id="newsletter-form" class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+<input type="email" placeholder="Ihre E-Mail-Adresse" class="flex-grow px-4 py-3 !rounded-lg border-none focus:outline-none focus:ring-2 focus:ring-primary" required>
+<button type="submit" class="bg-primary text-white px-6 py-3 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Abonnieren</button>
+</form>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-brown text-white pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<div>
+<h3 class="text-xl font-bold mb-6">Konditorei Goldblatt</h3>
+<p class="opacity-80 mb-6">Handgefertigte Konditorkunst seit 1950 im Herzen von Frankfurt am Main.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 !rounded-full border border-white border-opacity-20 flex items-center justify-center hover:bg-white hover:bg-opacity-10 transition-all">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 !rounded-full border border-white border-opacity-20 flex items-center justify-center hover:bg-white hover:bg-opacity-10 transition-all">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="w-10 h-10 !rounded-full border border-white border-opacity-20 flex items-center justify-center hover:bg-white hover:bg-opacity-10 transition-all">
+<i class="ri-pinterest-line"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-6">Kontakt</h3>
+<ul class="space-y-4 opacity-80">
+<li class="flex items-start">
+<i class="ri-map-pin-line mr-3 mt-1"></i>
+<span>Goethestraße 25<br>60313 Frankfurt am Main</span>
+</li>
+<li class="flex items-center">
+<i class="ri-phone-line mr-3"></i>
+<span>+49 (0) 69 123 45678</span>
+</li>
+<li class="flex items-center">
+<i class="ri-mail-line mr-3"></i>
+<span>info@konditorei-goldblatt.de</span>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-6">Öffnungszeiten</h3>
+<ul class="space-y-2 opacity-80">
+<li class="flex justify-between">
+<span>Montag - Freitag:</span>
+<span>7:00 - 18:00 Uhr</span>
+</li>
+<li class="flex justify-between">
+<span>Samstag:</span>
+<span>8:00 - 16:00 Uhr</span>
+</li>
+<li class="flex justify-between">
+<span>Sonntag:</span>
+<span>9:00 - 13:00 Uhr</span>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-6">Links</h3>
+<ul class="space-y-3 opacity-80">
+<li><a href="#" class="hover:text-primary transition-colors">Startseite</a></li>
+<li><a href="#produkte" class="hover:text-primary transition-colors">Produkte</a></li>
+<li><a href="#ueber-uns" class="hover:text-primary transition-colors">Über uns</a></li>
+<li><a href="#blog" class="hover:text-primary transition-colors">Blog</a></li>
+<li><a href="#kontakt" class="hover:text-primary transition-colors">Kontakt</a></li>
+<li><a href="#" class="hover:text-primary transition-colors">Impressum</a></li>
+<li><a href="#" class="hover:text-primary transition-colors">Datenschutz</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-white border-opacity-10 text-center opacity-60 text-sm">
+<p>&copy; 2025 Konditorei Goldblatt. Alle Rechte vorbehalten.</p>
+</div>
+</div>
+</footer>
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-white p-4 shadow-lg z-50 transform translate-y-full transition-transform duration-300">
+<div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="text-brown">
+<p>Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten. <a href="#" class="text-primary hover:underline">Mehr erfahren</a></p>
+</div>
+<div class="flex gap-3">
+<button id="accept-cookies" class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Akzeptieren</button>
+<button id="decline-cookies" class="bg-white text-brown border border-gray-200 px-6 py-2 !rounded-button hover:bg-gray-50 transition-all whitespace-nowrap">Ablehnen</button>
+</div>
+</div>
+</div>
+<!-- Mobile Navigation Script -->
+<script id="mobile-navigation-script">
+document.addEventListener('DOMContentLoaded', function() {
+const mobileMenuButton = document.getElementById('mobileMenuButton');
+const mobileMenuClose = document.getElementById('mobileMenuClose');
+const mobileMenu = document.getElementById('mobileMenu');
+
+// Product details toggle functionality
+const detailsButtons = document.querySelectorAll('.product-details-btn');
+detailsButtons.forEach(button => {
+button.addEventListener('click', function() {
+const detailsSection = this.closest('.flex-col').querySelector('.product-details');
+const icon = this.querySelector('i');
+if (detailsSection.classList.contains('hidden')) {
+detailsSection.classList.remove('hidden');
+icon.style.transform = 'rotate(180deg)';
+} else {
+detailsSection.classList.add('hidden');
+icon.style.transform = 'rotate(0)';
+}
+});
+});
+mobileMenuButton.addEventListener('click', function() {
+mobileMenu.classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+});
+mobileMenuClose.addEventListener('click', function() {
+mobileMenu.classList.add('hidden');
+document.body.style.overflow = '';
+});
+// Close mobile menu when clicking on a link
+const mobileLinks = mobileMenu.querySelectorAll('a');
+mobileLinks.forEach(link => {
+link.addEventListener('click', function() {
+mobileMenu.classList.add('hidden');
+document.body.style.overflow = '';
+});
+});
+});
+</script>
+<!-- Testimonials Scroll Script -->
+<script id="testimonials-scroll-script">
+document.addEventListener('DOMContentLoaded', function() {
+const container = document.getElementById('testimonials-container');
+const scrollLeftBtn = document.getElementById('scroll-left');
+const scrollRightBtn = document.getElementById('scroll-right');
+const dotsContainer = document.getElementById('testimonial-dots');
+if (!container || !scrollLeftBtn || !scrollRightBtn || !dotsContainer) return;
+const testimonials = container.querySelectorAll('.testimonial-card');
+const testimonialWidth = testimonials[0].offsetWidth + 24; // Including gap
+let currentIndex = 0;
+// Create dots
+testimonials.forEach((_, index) => {
+const dot = document.createElement('button');
+dot.className = `w-2 h-2 !rounded-full transition-all ${index === 0 ? 'bg-primary' : 'bg-primary bg-opacity-30'}`;
+dot.addEventListener('click', () => scrollToTestimonial(index));
+dotsContainer.appendChild(dot);
+});
+function updateDots() {
+const dots = dotsContainer.querySelectorAll('button');
+dots.forEach((dot, index) => {
+dot.className = `w-2 h-2 !rounded-full transition-all ${index === currentIndex ? 'bg-primary' : 'bg-primary bg-opacity-30'}`;
+});
+}
+function updateButtons() {
+scrollLeftBtn.disabled = currentIndex === 0;
+scrollRightBtn.disabled = currentIndex === testimonials.length - 1;
+}
+function scrollToTestimonial(index) {
+currentIndex = index;
+container.scrollTo({
+left: index * testimonialWidth,
+behavior: 'smooth'
+});
+updateDots();
+updateButtons();
+}
+scrollLeftBtn.addEventListener('click', () => {
+if (currentIndex > 0) {
+scrollToTestimonial(currentIndex - 1);
+}
+});
+scrollRightBtn.addEventListener('click', () => {
+if (currentIndex < testimonials.length - 1) {
+scrollToTestimonial(currentIndex + 1);
+}
+});
+// Touch swipe handling
+let touchStartX = 0;
+let touchEndX = 0;
+container.addEventListener('touchstart', e => {
+touchStartX = e.changedTouches[0].screenX;
+}, false);
+container.addEventListener('touchend', e => {
+touchEndX = e.changedTouches[0].screenX;
+handleSwipe();
+}, false);
+function handleSwipe() {
+const swipeThreshold = 50;
+const diff = touchStartX - touchEndX;
+if (Math.abs(diff) > swipeThreshold) {
+if (diff > 0 && currentIndex < testimonials.length - 1) {
+scrollToTestimonial(currentIndex + 1);
+} else if (diff < 0 && currentIndex > 0) {
+scrollToTestimonial(currentIndex - 1);
+}
+}
+}
+// Update on scroll
+container.addEventListener('scroll', () => {
+const newIndex = Math.round(container.scrollLeft / testimonialWidth);
+if (newIndex !== currentIndex) {
+currentIndex = newIndex;
+updateDots();
+updateButtons();
+}
+});
+// Initial state
+updateButtons();
+});
+</script>
+<!-- Blog Category Filter Script -->
+<script id="blog-category-filter-script">
+document.addEventListener('DOMContentLoaded', function() {
+const categoryButtons = document.querySelectorAll('.category-filter');
+categoryButtons.forEach(button => {
+button.addEventListener('click', function() {
+// Remove active class from all buttons
+categoryButtons.forEach(btn => {
+btn.classList.remove('active');
+btn.classList.remove('bg-white');
+});
+// Add active class to clicked button
+this.classList.add('active');
+this.classList.add('bg-white');
+// Here you would typically filter the blog posts
+// For this demo, we're just toggling the active state
+});
+});
+});
+</script>
+<!-- Form Handling Script -->
+<script id="form-handling-script">
+document.addEventListener('DOMContentLoaded', function() {
+const orderForm = document.getElementById('order-form');
+const newsletterForm = document.getElementById('newsletter-form');
+if (orderForm) {
+orderForm.addEventListener('submit', function(e) {
+e.preventDefault();
+// Simulate form submission
+alert('Vielen Dank für Ihre Anfrage! Wir werden uns in Kürze bei Ihnen melden.');
+orderForm.reset();
+});
+}
+if (newsletterForm) {
+newsletterForm.addEventListener('submit', function(e) {
+e.preventDefault();
+// Simulate form submission
+alert('Vielen Dank für Ihre Anmeldung zum Newsletter!');
+newsletterForm.reset();
+});
+}
+});
+</script>
+<!-- Toast Notification -->
+<div id="toast-notification" class="fixed top-4 right-4 bg-green-500 text-white px-6 py-3 !rounded-lg shadow-lg transform translate-y-[-100%] opacity-0 transition-all duration-300 z-50">
+Ihre Cookie-Einstellungen wurden gespeichert
+</div>
+<!-- Cookie Consent Script -->
+<script id="cookie-consent-script">
+document.addEventListener('DOMContentLoaded', function() {
+const cookieBanner = document.getElementById('cookie-banner');
+const acceptCookies = document.getElementById('accept-cookies');
+const declineCookies = document.getElementById('decline-cookies');
+const toastNotification = document.getElementById('toast-notification');
+function setCookie(name, value, days) {
+const date = new Date();
+date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+const expires = "expires=" + date.toUTCString();
+document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+function showToast() {
+toastNotification.style.transform = 'translateY(0)';
+toastNotification.style.opacity = '1';
+setTimeout(() => {
+toastNotification.style.transform = 'translateY(-100%)';
+toastNotification.style.opacity = '0';
+}, 3000);
+}
+// Check if user has already made a choice
+const cookieConsent = localStorage.getItem('cookieConsent');
+if (!cookieConsent) {
+setTimeout(() => {
+cookieBanner.style.transform = 'translateY(0)';
+}, 1000);
+}
+acceptCookies.addEventListener('click', function() {
+localStorage.setItem('cookieConsent', 'accepted');
+setCookie('necessary_cookies', 'true', 365);
+setCookie('analytics_cookies', 'true', 365);
+setCookie('marketing_cookies', 'true', 365);
+setCookie('preferences_cookies', 'true', 365);
+cookieBanner.style.transform = 'translateY(full)';
+setTimeout(() => {
+cookieBanner.style.display = 'none';
+}, 300);
+showToast();
+});
+declineCookies.addEventListener('click', function() {
+localStorage.setItem('cookieConsent', 'declined');
+setCookie('necessary_cookies', 'true', 365);
+cookieBanner.style.transform = 'translateY(full)';
+setTimeout(() => {
+cookieBanner.style.display = 'none';
+}, 300);
+});
+});
+</script>
+<!-- Smooth Scroll Script -->
+<script id="smooth-scroll-script">
+document.addEventListener('DOMContentLoaded', function() {
+const links = document.querySelectorAll('a[href^="#"]');
+links.forEach(link => {
+link.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+if (targetId === '#') return;
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+const headerOffset = 80;
+const elementPosition = targetElement.getBoundingClientRect().top;
+const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+window.scrollTo({
+top: offsetPosition,
+behavior: 'smooth'
+});
+}
+});
+});
+});
+</script>
+</body>
+</html>
